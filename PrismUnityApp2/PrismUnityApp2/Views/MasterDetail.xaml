@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  xmlns:views="clr-namespace:PrismUnityApp2.Views;assembly=PrismUnityApp2"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="PrismUnityApp2.Views.MasterDetail">
+  <MasterDetailPage.Master>
+    <ContentPage Title="Menu" >
+      <StackLayout>
+        <Button  Text="MainPage" Command="{Binding Path=NavigateCommand}"/>
+        <Button  Text="Page1" Command="{Binding Path=NavigateCommand}" CommandParameter="Page1" />
+        <Button  Text="Page2" Command="{Binding Path=NavigateCommand}" CommandParameter="Page2" />
+      </StackLayout>
+    </ContentPage>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <views:Navigation>
+      <views:MainPage/>
+    </views:Navigation>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>
